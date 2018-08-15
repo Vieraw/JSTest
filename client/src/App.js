@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min'
 import './App.css';
@@ -84,7 +85,6 @@ class App extends Component {
         })));
 
 
-
         e.target.target = '_blank';
         e.target.href = json;
         e.target.download = 'export.json';
@@ -120,13 +120,23 @@ class App extends Component {
                     {message}
                 </div>
                 <div className={"bottom-buttons"}>
-                    <button className={"btn btn-primary"} type={"submit"} disabled={this.state.submitDisabled}>Submit</button>
+                    <button className={"btn btn-primary"} type={"submit"} disabled={this.state.submitDisabled}>Submit
+                    </button>
                     <a className={"btn btn-primary"} href={"/"} onClick={e => this.onExport(e)}>Export</a>
                 </div>
             </form>
         );
     }
 }
+
+App.propTypes ={
+    records: PropTypes.object.isRequired,
+    saveRecords: PropTypes.func.isRequired,
+    setRecords: PropTypes.func.isRequired,
+    addRecord: PropTypes.func.isRequired,
+    recordChange: PropTypes.func.isRequired,
+    deleteRecord: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({
     ...state,

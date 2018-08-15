@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
 import Modal from "./Modal";
+import PropTypes from 'prop-types';
 
 const isSearched = searchTerm => (item) => {
     let result;
@@ -130,5 +131,11 @@ class Table extends Component {
     }
 }
 
+Table.propTypes = {
+    records: PropTypes.array.isRequired,
+    pattern: PropTypes.string.isRequired,
+    onDelete: PropTypes.func.isRequired,
+    onRecordChange: PropTypes.func.isRequired
+};
 
 export default Table;
