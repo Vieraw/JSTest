@@ -1,0 +1,94 @@
+.application{
+    width: 95%;
+    margin: 10px auto;
+}
+
+.message,
+.error{
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.message{
+    color: green;
+}
+
+.input-disabled{
+    pointer-events: none;
+    background: #F0F0F0;
+    border: 1px solid #CCCCCC;
+}
+
+.table__actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+.table-age{
+    width: 2%;
+}
+
+.table-gender{
+    width: 5%;
+}
+
+.search-input{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1% 0;
+    align-items: center;
+}
+
+.table td{
+    vertical-align: middle;
+    padding: 0.5rem;
+}
+
+.table input{
+    width: 100%;
+    text-align: center;
+}
+
+.top-buttons,
+.bottom-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 1%;
+}
+
+.upload-button{
+    margin: 0;
+}
+
+.arrows {
+    position: relative;
+    cursor: pointer;
+    user-select:none
+}
+.arrows:after, .arrows:before{
+    content: ' ';
+    position: absolute;
+    right: 0;
+    border: solid transparent;
+    border-width: 7px 4px;
+    margin: 0 2px 0 0;
+}
+
+.arrows:after {
+    bottom: 7px;
+    border-top-color: gray;
+}
+
+.arrows:before {
+    bottom: 23px;
+    border-bottom-color: gray;
+}
+
+.arrows.asc::before{
+    border-bottom-color: #6699CC;
+}
+.arrows.desc::after{
+    border-top-color: #6699CC;
+}
